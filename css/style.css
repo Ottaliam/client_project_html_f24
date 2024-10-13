@@ -57,6 +57,9 @@ figure figcaption {
 }
 
 nav a, nav a:hover, nav a:active, nav a:visited {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
@@ -90,6 +93,10 @@ nav ul li:nth-child(even) {
 nav ul li.active{
     background-color: #FFCB05;
     border-bottom: 0.5em solid #00274C;
+}
+
+nav ul li.active a {
+    color: #00274C;
 }
 
 section {

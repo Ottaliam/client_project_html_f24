@@ -2,20 +2,46 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+    color: #024794;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+figure {
+    text-align: center;
+}
+
+figure figcaption {
+    font-size: 0.8em;
+}
+
 #skip-to-main-content {
     position: fixed;
-    left: 0;
     top: -1000px;
+    tab-index: 0;
+    z-index: 1000;
+    background-color: white;
+    color: black;
+    border-radius: 0.2em;
+    padding: 0.5em;
+    font-weight: bold;
 }
 
 #skip-to-main-content:focus {
-    top: 0;
+    top: 0.2em;
+    left: 0.2em;
 }
 
 #header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #00274C;
+    color: white;
 }
 
 #header img {
@@ -25,25 +51,45 @@ body {
 }
 
 #header h1 {
-    color: #00274C;
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+nav a, nav a:hover, nav a:active, nav a:visited {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+}
+
 nav ul {
-    display: flex;
-    justify-content: center;
-    background-color: #f8f9fa;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.2em;
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: self-start;
     font-size: 1.2em;
+    text-align: center;
+    color: white;
 }
 
 nav ul li {
-    list-style: none;
-    margin: 0 10px;
-    padding: 1%;
-    border: 1px solid #6c757d;
-    border-radius: 3px;
+    padding: 0.2em 0;
+}
+
+nav ul li:nth-child(odd) {
+    background-color: #0c71bb;
+}
+
+nav ul li:nth-child(even) {
+    background-color: #0a807c;
+}
+
+nav ul li.active{
+    background-color: #FFCB05;
+    border-bottom: 0.5em solid #00274C;
 }
 
 section {
@@ -53,11 +99,109 @@ section {
 section h2 {
     color: #00274C;
     font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+section h3 {
+    color: #00274C;
+    font-weight: 600;
     font-size: 1.2em;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+}
+
+section p {
+    margin-top: 0.5em;
+}
+
+section ul {
+    list-style: disc;
+    margin-top: 0.5em;
+    margin-left: 1.5em;
+}
+
+section ol {
+    list-style: decimal;
+    margin-top: 0.5em;
+    margin-left: 1.5em;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 4em auto;
+    justify-items: center;
     align-items: center;
+    justify-content: space-evenly;
+    background-color: #f2f2f2;
+    padding: 1em 0;
+}
+
+footer img {
+    grid-row: 1 / span 2;
+}
+
+footer a, footer a:hover, footer a:active, footer a:visited {
+    text-decoration: none;
+}
+
+ul.img-list, ul.tutors, ul#academic-support, ul#caps-resources {
+    list-style: none;
+    margin-left: 0;
+}
+
+ul.img-list li {
+    display: grid;
+    grid-template-columns: 2.2em auto;
+    margin: 0.5em 0;
+}
+
+ul.img-list li img {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+ul.img-list li h3 {
+    margin: 0;
+    align-self: center;
+    padding-left: 0.5em;
+}
+
+ul.img-list li p {
+    grid-column: 1 / span 2;
+}
+
+ul.tutors li {
+    margin-top: 0.8em;
+}
+
+ul.tutors li h4 {
+    font-weight: bold;
+}
+
+ul#academic-support li {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #CFC096;
+    text-align: center;
+}
+
+ul#academic-support li h3 {
+    text-align: center;
+    margin: 0;
+}
+
+ul#caps-resources {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+}
+
+ul#caps-resources li {
+    margin-top: 2em;
+}
+
+ul#caps-resources li p {
+    margin-top: 0;
+    text-align: center;
 }

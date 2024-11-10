@@ -1,3 +1,4 @@
+// Generate and add footer
 const footer = `
   <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
   <p id="copyright">Copyright &copy; ${new Date().getFullYear().toString()} University of Michigan</p>
@@ -7,6 +8,8 @@ const footer = `
 
 document.querySelector('footer').innerHTML = footer;
 
+
+// Add news to food.html
 const foodNews = [
   {
     title: "Fall 2024 Mobile Distribution for North Campus",
@@ -33,3 +36,14 @@ if (newsDiv) {
     `;
   }).join('');
 }
+
+// Add table of contents
+const sections = document.querySelectorAll("main section");
+const tocItems = Array.from(sections).map((section, index) => {
+  if (!section.id) {
+    section.id = `section-${index}`;
+  }
+  const sectionTitle = section.querySelector("h2").textContent;
+  return `<li><a href="#${section.id}">${sectionTitle}</a></li>`;
+}).join('');
+document.querySelector('#toc').innerHTML = `<ul><h2>Table of Contents</h2>${tocItems}</ul>`;

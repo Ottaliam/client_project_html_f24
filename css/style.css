@@ -99,11 +99,15 @@ nav ul li.active a {
     color: #00274C;
 }
 
-section {
+#toc a {
+    text-decoration: none;
+}
+
+aside, section {
     margin: 1em;
 }
 
-section h2 {
+aside h2, section h2 {
     color: #00274C;
     font-weight: bold;
     font-size: 1.5em;

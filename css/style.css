@@ -87,7 +87,7 @@ nav ul li:nth-child(odd) {
 }
 
 nav ul li:nth-child(even) {
-    background-color: #0a807c;
+    background-color: #00B2A9;
 }
 
 nav ul li.active{
@@ -146,6 +146,11 @@ footer {
 
 footer img {
     grid-row: 1 / span 2;
+}
+
+footer #copyright {
+    grid-row: 3;
+    grid-column: 1 / -1;
 }
 
 footer a, footer a:hover, footer a:active, footer a:visited {
@@ -211,4 +216,56 @@ ul#caps-resources li {
 ul#caps-resources li p {
     margin-top: 0;
     text-align: center;
+}
+
+@media screen and (min-width: 850px) {
+    section#physical-health {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+        align-items: center;
+        gap: 0 5%;
+    }
+
+    section#physical-health > h2, #physical-health > p {
+        grid-column: 1 / -1;
+    }
+
+    ul#academic-support {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1%;
+    }
+
+    ul#academic-support li {
+        margin: 0;
+    }
+
+    ul#caps-resources {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    ul#caps-resources li {
+        grid-column: span 2;
+    }
+
+    ul#caps-resources li:nth-child(3) {
+        grid-column: 2 / span 2;
+    }
+
+    #page-not-found {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    #page-not-found img {
+        width: 80%;
+        margin: 5% 5%;
+    }
+
+    #page-not-found section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

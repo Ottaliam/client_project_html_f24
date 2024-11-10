@@ -240,6 +240,9 @@ ul#caps-resources li p {
 
     ul#academic-support li {
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     ul#caps-resources {

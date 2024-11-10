@@ -46,4 +46,7 @@ const tocItems = Array.from(sections).map((section, index) => {
   const sectionTitle = section.querySelector("h2").textContent;
   return `<li><a href="#${section.id}">${sectionTitle}</a></li>`;
 }).join('');
-document.querySelector('#toc').innerHTML = `<ul><h2>Table of Contents</h2>${tocItems}</ul>`;
+const toc = document.querySelector('#toc');
+if (toc) {
+  toc.innerHTML = `<h2>Table of Contents</h2><ul>${tocItems}</ul>`;
+}
